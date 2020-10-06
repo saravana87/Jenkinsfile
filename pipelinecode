@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'python covid_autoviz.py'
+        bat 'python covid_autoviz.py'
       }
     }
   }
