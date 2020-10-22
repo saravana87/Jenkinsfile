@@ -13,5 +13,5 @@ df = sqlContext.read.format("com.databricks.spark.csv") \
      .options(header='true', inferschema='true').load("births.csv")
 df.registerTempTable("births")
 df3= sqlContext.sql("SELECT * from births")
-fig = px.scatter(pandf, x=df3.toPandas()['year'], y=df3.toPandas()['births'], color=df3.toPandas()['gender'])
+fig = px.scatter(df3.toPandas(), x=df3.toPandas()['year'], y=df3.toPandas()['births'], color=df3.toPandas()['gender'])
 fig.show()
